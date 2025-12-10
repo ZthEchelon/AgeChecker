@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8">
+        <title>HTML, CSS and JavaScript demo</title>
+    </head>
+    <body>
+        <main>
+            <h1> Age Checker </h1>
+            <section>
+                <p>Are you unborn, a baby, child, pre teen, teen, or an adult?</p>
+                <p>Enter your age below:</p>
+
+                <input type="number" id="ageInput">
+                <button onclick="checkAge()">Check</button>
+
+                <p id="output"></p>
+            </section>
+        </main>
+
+        <script>
+            function checkAge() {
+                let age = document.getElementById("ageInput").value;
+                age = Number(age);
+
+                let result = "";
+
+                if (age < 0) {
+                    result = "You are not born yet! ;)";
+                }
+                else if (age <= 2) {
+                    result = "You are a baby.";
+                }
+                else if (age <= 9) {
+                    result = "You are a child.";
+                }
+                else if (age <= 12) {
+                    result = "You are a pre-teen.";
+                }
+                else if (age <= 17) {
+                    result = "You are a teenager.";
+                }
+                else if (age <= 20) {
+                    result = "You are an adolescent / young adult.";
+                }
+                else {
+                    result = "You are an adult.";
+                }
+
+                document.getElementById("output").textContent = result;
+            }
+        </script>
+    </body>
+</html>
